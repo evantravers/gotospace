@@ -15,6 +15,7 @@ class ListsController < ApplicationController
   # GET /lists/1.json
   def show
     @list = current_user.lists.find(params[:id])
+    @todos = @list.todos
 
     respond_to do |format|
       format.html # show.html.erb

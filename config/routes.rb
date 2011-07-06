@@ -1,6 +1,7 @@
 Gotospace::Application.routes.draw do
-  devise_for :users do
-    resources :lists
+  devise_for :users
+  resources :lists do
+    resources :todos
   end
 
   # The priority is based upon order of creation:

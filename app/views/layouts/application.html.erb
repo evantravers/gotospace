@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <h1>GO TO SPACE</h1>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
   <%= link_to('Logout', destroy_user_session_path, :method => :delete) if user_signed_in? %>
