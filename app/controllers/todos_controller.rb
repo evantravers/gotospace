@@ -2,7 +2,7 @@ class TodosController < ApplicationController
   # GET /todos
   # GET /todos.json
   def index
-    @todos = Todo.all
+    @todos = current_user.lists.find(params[:list_id]).todos
 
     respond_to do |format|
       format.html # index.html.erb
@@ -24,8 +24,9 @@ class TodosController < ApplicationController
   # GET /todos/new
   # GET /todos/new.json
   def new
-    @todo = Todo.new
-
+    # TODO this has to be changed
+    @list = List.find(params['list_id'])
+    @todo = @list.todos.build
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @todo }
