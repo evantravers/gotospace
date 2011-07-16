@@ -24,6 +24,7 @@ class TodosController < ApplicationController
   # GET /todos/new
   # GET /todos/new.json
   def new
+    debugger
     # TODO this has to be changed
     @todo = @list.todos.build
     respond_to do |format|

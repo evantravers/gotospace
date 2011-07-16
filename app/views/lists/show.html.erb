@@ -3,7 +3,7 @@
 </p>
 <h4>Todos:</h4>
 <% @todos.each do |todo| %>
-  <li><%= todo.name %></li>
+  <%= render todo %>
 <% end %>
 <p><%= link_to 'New Todo', new_list_todo_path(@list) %></p>
 
