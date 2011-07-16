@@ -25,7 +25,6 @@ class TodosController < ApplicationController
   # GET /todos/new.json
   def new
     # TODO this has to be changed
-    @list = List.find(params['list_id'])
     @todo = @list.todos.build
     respond_to do |format|
       format.html # new.html.erb

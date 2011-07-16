@@ -1,6 +1,11 @@
 <p>
   <%= @list.name %>:
 </p>
+<h4>Todos:</h4>
+<% @todos.each do |todo| %>
+  <li><%= todo.name %></li>
+<% end %>
+<p><%= link_to 'New Todo', new_list_todo_path(@list) %></p>
 
 <%= link_to 'Edit', edit_list_path(@list) %> |
 <%= link_to 'Back', lists_path %>
