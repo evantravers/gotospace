@@ -1,8 +1,9 @@
 class TodosController < ApplicationController
+  before_filter :find_list
   # GET /todos
   # GET /todos.json
   def index
-    @todos = current_user.lists.find(params[:list_id]).todos
+    @todos = @list.todos
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +14,7 @@ class TodosController < ApplicationController
   # GET /todos/1
   # GET /todos/1.json
   def show
-    @todo = Todo.find(params[:id])
+    @todo = @list.todos.find(params[:todo_id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,7 +25,6 @@ class TodosController < ApplicationController
   # GET /todos/new
   # GET /todos/new.json
   def new
-    debugger
     # TODO this has to be changed
     @todo = @list.todos.build
     respond_to do |format|
@@ -81,4 +81,9 @@ class TodosController < ApplicationController
       format.json { head :ok }
     end
   end
+
+  private
+    def find_list
+      @list = current_user.lists.find(params[:list_id])
+    end
 end
