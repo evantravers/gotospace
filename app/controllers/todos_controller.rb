@@ -1,4 +1,4 @@
-class TodosController < ApplicationController
+class todosController < ApplicationController
   before_filter :find_list
   # GET /todos
   # GET /todos.json
@@ -25,12 +25,7 @@ class TodosController < ApplicationController
   # GET /todos/new
   # GET /todos/new.json
   def new
-    # TODO this has to be changed
     @todo = @list.todos.build
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @todo }
-    end
   end
 
   # GET /todos/1/edit
@@ -41,11 +36,11 @@ class TodosController < ApplicationController
   # POST /todos
   # POST /todos.json
   def create
-    @todo = Todo.new(params[:todo])
+    @todo = @list.todos.new(params[:todo])
 
     respond_to do |format|
       if @todo.save
-        format.html { redirect_to @todo, notice: 'Todo was successfully created.' }
+        format.html { redirect_to @list, notice: 'Todo was successfully created.' }
         format.json { render json: @todo, status: :created, location: @todo }
       else
         format.html { render action: "new" }
