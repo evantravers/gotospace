@@ -7,11 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <h1>GO TO SPACE</h1>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <%= link_to('Logout', destroy_user_session_path, :method => :delete) if user_signed_in? %>
+  <div id="wrapper">
+    <div id="header">
+    <h1>GO TO SPACE</h1>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    </div>
+    <div id="content">
+      <%= link_to('Logout', destroy_user_session_path, :method => :delete) if user_signed_in? %>
 
-  <%= yield %>
+      <%= yield %>
+    </div>
+    <div id="footer">
+      All content copyright 2011 gotospace inc.
+    </div>
+  </div>
 </body>
 </html>

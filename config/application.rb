@@ -38,5 +38,8 @@ module Gotospace
 
     # Enable the asset pipeline
     config.assets.enabled = true
+
+    #enable sass files
+    config.sass.preferred_syntax = :sass
   end
 end
