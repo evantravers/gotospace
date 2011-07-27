@@ -1,4 +1,4 @@
-class todosController < ApplicationController
+class TodosController < ApplicationController
   before_filter :find_list
   # GET /todos
   # GET /todos.json
@@ -75,6 +75,13 @@ class todosController < ApplicationController
       format.html { redirect_to todos_url }
       format.json { head :ok }
     end
+  end
+
+  def toggle
+    @todo = Todo.find(params[:todo_id])
+    @todo.completed = !@todo.completed
+    @todo.save
+    redirect_to @list
   end
 
   private

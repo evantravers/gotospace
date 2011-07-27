@@ -1,1 +1,1 @@
-<li> <input type="checkbox" name="completed"> - <%= todo.name %></li>
+<li><%= button_to 'complete', [@list, todo, :toggle] %> :: <%= todo.name %></li>

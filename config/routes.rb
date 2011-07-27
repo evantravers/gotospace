@@ -1,9 +1,11 @@
 Gotospace::Application.routes.draw do
   devise_for :users
-  resources :lists do
-    resources :todos
-  end
   root :to => 'lists#index'
+  resources :lists do
+    resources :todos do
+      post 'toggle'
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
