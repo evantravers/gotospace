@@ -1,1 +1,3 @@
 I'm messing around in rails, pardon my progress.
+
+This code represents a very simple rails app, a todo list in fact. I wanted to learn the basics of rails, as well as a little sass and coffeescript. I also used devise for the fun of it.
