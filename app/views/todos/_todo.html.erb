@@ -1,1 +1,1 @@
-<li><%= button_to 'X', [@list, todo, :toggle] %> :: <%= todo.name %></li>
+<li><%= link_to 'X', [@list, todo, :toggle], method: :post %> :: <%= todo.name %></li>

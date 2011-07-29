@@ -9,9 +9,10 @@ body
 
 @mixin main-block
   background-color: #fff
-  padding: 5px
+  padding: 15px
   margin: 15px
   border-radius: 3px
+  box-shadow: 3px 3px 5px #222
 
 #wrapper
   width: 960px
@@ -21,12 +22,22 @@ body
   @include main-block
   h1
     color: rgb(102, 255, 102)
-    padding-left: 20px
 
 #content
   @include main-block
+  li
+    list-style: none
 
 #footer
   @include main-block
-  font-size: 11hpx
+  font-size: 11px
 
+// end main nav
+
+.button_to
+  div
+    width: 30px
+    display: inline
+    float: left
+  input
+    display: inline
