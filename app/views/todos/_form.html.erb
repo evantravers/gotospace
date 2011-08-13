@@ -2,7 +2,6 @@
   <% if @todo.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@todo.errors.count, "error") %> prohibited this todo from being saved:</h2>
-
       <ul>
       <% @todo.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -14,10 +13,6 @@
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :completed %><br />
-    <%= f.check_box :completed %>
   </div>
   <div class="actions">
     <%= f.submit %>
